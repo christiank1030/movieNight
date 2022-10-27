@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=K2D' type="text/css">
+    <title>Movie Night</title>
+</head>
+<body>
+    <header>
+        <div class="headDiv" id="headerDivOne">
+            <img class="filmReel" src="./images/filmReel.png" alt="Film reel image">
+            <h1 class="mainHeader">Movie Night!</h1>
+        </div>
+        <div class="headDiv" id="headerDivTwo">
+            <a class="pageLink" href="index.html">
+                <h3>Home</h3>
+            </a>
+            <a class="pageLink" href="watchlist.html">
+                <h3>Watchlist</h3>
+            </a>
+        </div>
+    </header>
+    <div class="mainBody">
+        <div class="movieImg">
+            <img class="moviePoster" src="https://image.tmdb.org/t/p/original/xfSAoBEm9MNBjmlNcDYLvLSMlnq.jpg" alt="">
+        </div>
+        <div class="movieDisplay">
+                <h4 id="movieTitle">Find a Movie!</h4>
+                <p id="movieOverview">You should probably watch Revenge of the Sith, but if
+                    you insist on being lame set your filters and find yourself a movie for tonight!
+                </p>
+        </div>
+        <div id="filterContainer">
+            <form id="filterForm">
+                <label for="yearInput">Year:</label>
+                <input class="input" id="yearInput" type="text" placeholder="1990, 2000, 2015, etc">
+                <label for="genreInput">Genre:</label>
+                <input class="input" id="genreInput" type="text" placeholder="Action, Comedy, etc">
+                <button class="submitButton">Find a Movie!</button>
+            </form>
+            <h4 id="orTitle">Or</h4>
+            <form id="searchForm">
+                <label for="titleInput">Search by Title:</label>
+                <input class="input" id="titleInput" type="text" placeholder="Movie title">
+                <button class="submitButton">Search Movie!</button>
+            </form>
+        </div>
+    </div>
+
+
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

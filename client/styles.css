@@ -1,0 +1,125 @@
+body {
+    font-family: 'K2D';
+    margin: 0;
+    background-image: url('./images/movieScreenBackground.png');
+    background-size: 120vh;
+    background-repeat: no-repeat;
+    background-position: 1vh 17vh;
+}
+
+header {
+    background-color: rgb(9, 79, 184);
+    display: flex;
+    justify-content: space-between;
+}
+
+.headDiv {
+    height: 11vh;
+}
+
+#headerDivOne {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#headerDivTwo {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.filmReel {
+    width: 9vh;
+    height: 9vh;
+    padding: 1vh;
+    margin-right: 1vh;
+}
+
+.mainHeader{
+    color: whitesmoke;
+    font-size: 60px;
+}
+
+.pageLink {
+    text-decoration: none;
+    color: whitesmoke;
+    margin-right: 10vh;
+    margin-top: 2vh;
+    font-size: 3vh;
+}
+
+.mainBody {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.movieImg {
+    width: auto;
+}
+
+.moviePoster {
+    width: 40vh;
+    margin-top: 2vh;
+    margin-left: 5vh;
+}
+
+.movieDisplay {
+    font-family: 'K2D';
+    margin-left: 5vh;
+    margin-right: 15vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#movieTitle {
+    font-size: 6vh;
+    margin-top: 5vh;
+    margin-bottom: 0;
+}
+
+#movieOverview {
+    font-size: 2.5vh;
+}
+
+#addButton {
+    background-color: rgb(9, 79, 184);
+    color: whitesmoke;
+    font-size: 5vh;
+    padding: 3vh;
+
+}
+
+#filterContainer {
+    margin-top: 7.5vh;
+    margin-right: 3vh;
+    background-color: rgb(9, 79, 184);
+}
+
+form {
+    font-size: 4vh;
+    padding-top: 2vh;
+    padding-bottom: 4vh;
+    padding-left: 3vh;
+    padding-right: 5vh;
+    color: whitesmoke;
+}
+
+.input {
+    height: 8vh;
+    font-size: 3vh;
+}
+
+.submitButton {
+    background-color: whitesmoke;
+    color: rgb(9, 79, 184);
+    font-size: 3vh;
+}
+
+#orTitle {
+    color: whitesmoke;
+    font-size: 3vh;
+    margin: 2vh;
+    margin-left: 15vh;
+}
