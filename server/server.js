@@ -1,7 +1,7 @@
 const express = require('express')
 const cors = require('cors')
 
-const { getHTML } = require('./controller')
+const { getHTML, getListHTML, addMovie } = require('./controller')
 
 const app = express()
 
@@ -10,9 +10,9 @@ app.use(cors())
 app.use(express.static('client'))
 
 app.get('/', getHTML)
+app.get('/', getListHTML)
+app.post('/watchlist', addMovie)
 
-
-
-const port = 3000
+const port = process.env.PORT || 3000
 
 app.listen(port, console.log(`Server running on ${port}`))

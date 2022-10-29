@@ -8,22 +8,22 @@
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=K2D' type="text/css">
     <title>Movie Night</title>
 </head>
-<body>
+<body class="hasBackground">
     <header>
         <div class="headDiv" id="headerDivOne">
             <img class="filmReel" src="./images/filmReel.png" alt="Film reel image">
             <h1 class="mainHeader">Movie Night!</h1>
         </div>
         <div class="headDiv" id="headerDivTwo">
-            <a class="pageLink" href="index.html">
+            <a  onclick="showOne()" class="pageLink" id="homeLink" href="">
                 <h3>Home</h3>
             </a>
-            <a class="pageLink" href="watchlist.html">
+            <a onclick="showTwo()" class="pageLink" id="listLink" href="#">
                 <h3>Watchlist</h3>
             </a>
         </div>
     </header>
-    <div class="mainBody">
+    <div class="pageOne">
         <div class="movieImg">
             <img class="moviePoster" src="https://image.tmdb.org/t/p/original/xfSAoBEm9MNBjmlNcDYLvLSMlnq.jpg" alt="">
         </div>
@@ -32,6 +32,7 @@
                 <p id="movieOverview">You should probably watch Revenge of the Sith, but if
                     you insist on being lame set your filters and find yourself a movie for tonight!
                 </p>
+                
         </div>
         <div id="filterContainer">
             <form id="filterForm">
@@ -47,6 +48,12 @@
                 <input class="input" id="titleInput" type="text" placeholder="Movie title">
                 <button class="submitButton">Search Movie!</button>
             </form>
+        </div>
+    </div>
+    <div class="pageTwo">
+        <div class="movieCard" id="sampleCard">
+            <h4 id="movieTitle">Your watchlist</h4>
+            <p id="movieOverview">Movies you add to your watchlist will appear here!</p>
         </div>
     </div>
 
