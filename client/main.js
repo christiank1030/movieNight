@@ -97,6 +97,8 @@ const showOne = () => {
 
 const showTwo = () => {
     pageOne.style.display='none'
+    pageTwo.style.display='flex'
+    pageTwo.style.flexDirection='column'
     body.classList.remove('hasBackground')
     body.classList.add('noBackground')
 }
@@ -112,7 +114,6 @@ const filterMovie = (event) => {
         const { name, id } = genres[i]
         if(genre === name) {
             genreID = id
-            console.log(genreID)
             axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=13e1065e563f4384c1780689bbaa8897&language=en-US&with_genres=${genreID}&primary_release_year=${decade}`)
             .then(res => {
                 const { results } = res.data
@@ -175,22 +176,25 @@ const addMovie = () => {
 
     axios.post(`/watchlist`, movie) 
     .then(res => {
-        console.log(res.data)
         makeWatchlist(res.data)
     })
 }
 
 const makeWatchlist = (movie) => {
     const sampleCard = document.getElementById('sampleCard')
-    const { title, overview } = movie    
-    console.log(title)
+    const { title, overview, poster } = movie    
     sampleCard.innerHTML = ``
-    
-    const movieCard = document.createElement('div');
-    movieCard.classList.add('movieCard')
-    
-    movieCard.innerHTML = `<h4>${title}</h4>
-    <p>${overview}</p>`
+
+    const newMovie = document.createElement('div')
+
+    newMovie.classList.add('movieCard')
+
+    newMovie.innerHTML = `<h4 class="WLmovieTitle">${title}</h4>
+    <p class="WLmovieOverview">${overview}</p>
+    <button class="seenButton">Mark as Watched</button>
+    <button class="deleteButton">Delete</button>`
+
+    pageTwo.appendChild(newMovie)
     }
 
 

@@ -14,7 +14,7 @@
 }
 
 header {
-    background-color: rgb(9, 79, 184);
+    background-color: rgb(17, 24, 57);
     display: flex;
     justify-content: space-between;
 }
@@ -43,7 +43,7 @@ header {
 
 .mainHeader{
     color: whitesmoke;
-    font-size: 60px;
+    font-size: 7vh;
 }
 
 .pageLink {
@@ -90,7 +90,7 @@ header {
 }
 
 #addButton {
-    background-color: rgb(9, 79, 184);
+    background-color: rgb(34, 78, 105);
     color: whitesmoke;
     font-size: 5vh;
     padding: 3vh;
@@ -100,7 +100,7 @@ header {
 #filterContainer {
     margin-top: 7.5vh;
     margin-right: 3vh;
-    background-color: rgb(9, 79, 184);
+    background-color: rgb(34, 78, 105);
 }
 
 form {
@@ -119,7 +119,7 @@ form {
 
 .submitButton {
     background-color: whitesmoke;
-    color: rgb(9, 79, 184);
+    color: rgb(34, 78, 105);
     font-size: 3vh;
 }
 
@@ -132,4 +132,49 @@ form {
 
 .pageTwo {
     display: none;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.movieCard {
+    background-color: rgb(34, 78, 105);
+    color: whitesmoke;
+    padding: 3vh;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+}
+
+.WLmovieTitle {
+    font-size: 6vh;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.WLmovieOverview {
+    font-size: 2.5vh;
+}
+
+#watchlistTitle {
+    font-size: 6vh;
+    margin-bottom: 0;
+}
+
+#watchlistOverview {
+    font-size: 2.5vh;
+}
+
+.seenButton {
+    background-color: whitesmoke;
+    color: rgb(34, 78, 105);
+    padding: 1vh;
+    border-radius: 50px;
+    font-size: 2.5vh;
+}
+
+.deleteButton {
+    background-color: whitesmoke;
+    color: rgb(197, 0, 0);
+    padding: 1vh;
+    border-radius: 50px;
+    font-size: 2.5vh;
 }

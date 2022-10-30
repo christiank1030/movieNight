@@ -1,5 +1,4 @@
 const path = require('path')
-const db = require('./db.json')
 let globalID = 1
 
 
@@ -21,7 +20,6 @@ module.exports = {
             title,
             overview
         }
-        db.push(movie)
         globalID++
         res.send(movie)
     }
