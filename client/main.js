@@ -1,3 +1,4 @@
+
 const body = document.querySelector('body')
 const filters = document.getElementById('filterForm')
 const search = document.getElementById('searchForm')
@@ -101,6 +102,8 @@ const showTwo = () => {
     pageTwo.style.flexDirection='column'
     body.classList.remove('hasBackground')
     body.classList.add('noBackground')
+    markAsWatched()
+    deleteMovie()
 }
 
 
@@ -167,6 +170,9 @@ const addMovie = () => {
     const movieTitle = document.getElementById('movieTitle').textContent
     const movieOverview = document.getElementById('movieOverview').textContent
     const poster = document.querySelector(".moviePoster").src
+    const addButton = document.getElementById('addButton')
+
+    addButton.textContent = `${movieTitle} added to Watchlist!`
 
     const movie = {
         poster,
@@ -182,11 +188,10 @@ const addMovie = () => {
 
 const makeWatchlist = (movie) => {
     const sampleCard = document.getElementById('sampleCard')
-    const { title, overview, poster } = movie    
+    const { title, overview } = movie    
     sampleCard.innerHTML = ``
 
     const newMovie = document.createElement('div')
-
     newMovie.classList.add('movieCard')
 
     newMovie.innerHTML = `<h4 class="WLmovieTitle">${title}</h4>
@@ -195,7 +200,41 @@ const makeWatchlist = (movie) => {
     <button class="deleteButton">Delete</button>`
 
     pageTwo.appendChild(newMovie)
+}
+
+const markAsWatched = () => {
+   let movieCard = document.querySelectorAll('.movieCard')
+
+   for(let i = 0; i < movieCard.length; i++) {
+        movieCard[i].querySelector('.seenButton').addEventListener('click', changeMovieCard)
+   }
+}
+
+const changeMovieCard = (event) => {
+    event.target.parentNode.classList.toggle('watched')
+    event.target.parentNode.firstChild.classList.toggle('crossed')
+    
+    if(event.target.parentNode.classList.contains('watched') === true) {
+        event.target.textContent = 'Mark as Unwatched'
+    } else {
+        event.target.textContent = 'Mark as Watched'
     }
+}
+
+const deleteMovie = () => {
+    let movieCard = document.querySelectorAll('.movieCard')
+
+    for(let i = 0; i < movieCard.length; i++) {
+         movieCard[i].querySelector('.deleteButton').addEventListener('click', removeCard)
+    }
+}
+
+const removeCard = (event) => {
+    event.target.parentNode.remove()
+}
+
+
+
 
 
 filters.addEventListener('submit', filterMovie)

@@ -12,7 +12,6 @@ module.exports = {
     },
 
     addMovie: (req, res) => {
-        console.log(req.body)
         const { title, overview, poster } = req.body
         let movie = {
             id: globalID,
