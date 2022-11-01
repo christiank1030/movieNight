@@ -102,8 +102,14 @@ const showTwo = () => {
     pageTwo.style.flexDirection='column'
     body.classList.remove('hasBackground')
     body.classList.add('noBackground')
-    markAsWatched()
-    deleteMovie()
+    
+
+    axios.get('/watchlist')
+    .then(res => {
+        makeWatchlist(res.data)
+        markAsWatched()
+        deleteMovie()
+    })
 }
 
 
@@ -175,7 +181,7 @@ const addMovie = () => {
     addButton.textContent = `${movieTitle} added to Watchlist!`
 
     const movie = {
-        poster,
+        poster: poster,
         title: movieTitle,
         overview: movieOverview
     }
@@ -188,8 +194,9 @@ const addMovie = () => {
 
 const makeWatchlist = (movie) => {
     const sampleCard = document.getElementById('sampleCard')
-    const { title, overview } = movie    
-    sampleCard.innerHTML = ``
+    for(let i = 0; i < movie.length; i++) {
+        const { title, overview } = movie[i]
+        sampleCard.innerHTML = ``
 
     const newMovie = document.createElement('div')
     newMovie.classList.add('movieCard')
@@ -199,7 +206,9 @@ const makeWatchlist = (movie) => {
     <button class="seenButton">Mark as Watched</button>
     <button class="deleteButton">Delete</button>`
 
-    pageTwo.appendChild(newMovie)
+    pageTwo.appendChild(newMovie)   
+    }  
+    
 }
 
 const markAsWatched = () => {
@@ -225,12 +234,30 @@ const deleteMovie = () => {
     let movieCard = document.querySelectorAll('.movieCard')
 
     for(let i = 0; i < movieCard.length; i++) {
-         movieCard[i].querySelector('.deleteButton').addEventListener('click', removeCard)
-    }
+        const title = movieCard[i].querySelector('.WLmovieTitle')
+        console.log(title)
+        let deleteButton = title.parentNode.lastElementChild
+        deleteButton.addEventListener('click', removeCard)
+    }  
 }
 
 const removeCard = (event) => {
-    event.target.parentNode.remove()
+    let title = event.target.parentNode.firstChild.textContent
+
+    
+    axios.delete(`/watchlist/${title}`)
+    .then(res => {
+        let deletedTitle = document.querySelectorAll('.movieCard')
+        for(let i = 0; i < deletedTitle.length; i++) {
+            if(deletedTitle[i].firstChild.textContent = title) {
+                deletedTitle[i].remove()
+            }
+        }
+    })
+}
+
+const removeFromDB = () => {
+
 }
 
 

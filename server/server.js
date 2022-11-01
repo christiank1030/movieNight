@@ -1,7 +1,9 @@
 const express = require('express')
 const cors = require('cors')
+require('dotenv').config()
+const {SERVER_PORT} = process.env
 
-const { getHTML, getListHTML, addMovie } = require('./controller')
+const { getHTML, addMovie, showTwo, removeCard } = require('./controller')
 
 const app = express()
 
@@ -10,9 +12,10 @@ app.use(cors())
 app.use(express.static('client'))
 
 app.get('/', getHTML)
-app.get('/', getListHTML)
 app.post('/watchlist', addMovie)
+app.get('/watchlist', showTwo)
+app.delete('/watchlist/:title', removeCard)
 
-const port = process.env.PORT || 3000
+const port = SERVER_PORT || 3000
 
 app.listen(port, console.log(`Server running on ${port}`))
