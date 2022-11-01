@@ -1,7 +1,6 @@
 const express = require('express')
 const cors = require('cors')
 require('dotenv').config()
-const {SERVER_PORT} = process.env
 
 const { getHTML, addMovie, showTwo, removeCard } = require('./controller')
 
