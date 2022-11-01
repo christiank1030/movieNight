@@ -247,12 +247,7 @@ const removeCard = (event) => {
     
     axios.delete(`/watchlist/${title}`)
     .then(res => {
-        let deletedTitle = document.querySelectorAll('.movieCard')
-        for(let i = 0; i < deletedTitle.length; i++) {
-            if(deletedTitle[i].firstChild.textContent = title) {
-                deletedTitle[i].remove()
-            }
-        }
+        event.target.parentNode.remove()
     })
 }
 
