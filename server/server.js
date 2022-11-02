@@ -15,6 +15,6 @@ app.post('/watchlist', addMovie)
 app.get('/watchlist', showTwo)
 app.delete('/watchlist/:title', removeCard)
 
-const port = 80 || 3000
+const port = process.env.PORT || 3000
 
 app.listen(port, console.log(`Server running on ${port}`))

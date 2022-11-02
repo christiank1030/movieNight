@@ -2,7 +2,6 @@ require("dotenv").config();
 const Sequelize = require("sequelize");
 
 const { CONNECTION_STRING } = process.env
-const { API_KEY } = process.env
 
 const sequelize = new Sequelize(CONNECTION_STRING, {
     dialect: 'postgres',
@@ -14,8 +13,6 @@ const sequelize = new Sequelize(CONNECTION_STRING, {
   })
 
 const path = require('path');
-const { title } = require("process");
-let globalID = 1
 
 
 module.exports = {

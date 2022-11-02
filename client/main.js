@@ -251,10 +251,6 @@ const removeCard = (event) => {
     })
 }
 
-const removeFromDB = () => {
-
-}
-
 
 
 
