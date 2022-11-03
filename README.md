@@ -9,8 +9,14 @@ If you're as indecisive as me, finding a movie to watch can take longer than act
 ## Screenshots
 
 ![alt text](https://github.com/christiank1030/movieNight/blob/main/readmeImgs/ss1.png)
+
+
 ![alt text](https://github.com/christiank1030/movieNight/blob/main/readmeImgs/ss2.png)
+
+
 ![alt text](https://github.com/christiank1030/movieNight/blob/main/readmeImgs/ss3.png)
+
+
 ![alt text](https://github.com/christiank1030/movieNight/blob/main/readmeImgs/ss4.png)
 
 
