@@ -8,10 +8,10 @@ If you're as indecisive as me, finding a movie to watch can take longer than act
 
 ## Screenshots
 
-![alt text](../Presentation/ss1.png)
-![alt text](../Presentation/ss2.png)
-![alt text](../Presentation/ss3.png)
-![alt text](../Presentation/ss4.png)
+![plot](../Presentation/ss1.png)
+![plot](../Presentation/ss2.png)
+![plot](../Presentation/ss3.png)
+![plot](../Presentation/ss4.png)
 
 
 ## Tech Stack
